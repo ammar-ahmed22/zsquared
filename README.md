@@ -1,5 +1,5 @@
 <div align="center"> 
-  <image src="./public/z_squared_favicon_io/android-chrome-512x512.png?raw=true">
+  <image src="./public/z_squared_favicon_io/android-chrome-512x512.png?raw=true" width="30" height="30">
   <h2>Z Squared Client</h2>
   <p>Welcome to the official documentation for the Z Squared website, a modern full-stack blog website using React and Chakra UI, with Notion serving as the backend CMS/database. This repo serves as the React client for the website!</p>
 </div>
