@@ -44,7 +44,8 @@ const Featured: React.FC = () => {
     "rgba(0, 0, 0, 0.6)",
   );
 
-  const shouldRender = !loading && data && data.metadata.length > 0;
+  const shouldRender =
+    !loading && data && data.metadata.length > 0;
 
   if (shouldRender) {
     return (
@@ -53,83 +54,82 @@ const Featured: React.FC = () => {
         mt="5"
       >
         <VStack align="flex-start" p="5">
-            <Text
-              fontFamily="heading"
-              fontSize="4xl"
-              fontWeight="bold"
-              color="brand.green.700"
-            >
-              Featured Posts:
-            </Text>
+          <Text
+            fontFamily="heading"
+            fontSize="4xl"
+            fontWeight="bold"
+            color="brand.green.700"
+          >
+            Featured Posts:
+          </Text>
           <SimpleGrid columns={{ base: 1, lg: 2 }}>
-            { data.metadata.map((metadata, i) => {
-                const date = new Date(metadata.publishDate);
-                const now = new Date();
-                const distance = formatDistance(date, now, {
-                  addSuffix: true,
-                });
-                return (
-                  <Card
-                    w={{ base: "100%", lg: "60vh" }}
-                    bg={cardBg}
-                    backdropFilter="blur(10px)"
-                    shadow="none"
-                    to={`/articles/post/${metadata.slug}`}
-                    as={ReactLink}
+            {data.metadata.map((metadata, i) => {
+              const date = new Date(metadata.publishDate);
+              const now = new Date();
+              const distance = formatDistance(date, now, {
+                addSuffix: true,
+              });
+              return (
+                <Card
+                  w={{ base: "100%", lg: "60vh" }}
+                  bg={cardBg}
+                  backdropFilter="blur(10px)"
+                  shadow="none"
+                  to={`/articles/post/${metadata.slug}`}
+                  as={ReactLink}
+                >
+                  <HStack
+                    flexDir={"column"}
+                    w="100%"
+                    spacing={5}
                   >
-                    <HStack
-                      flexDir={"column"}
-                      w="100%"
-                      spacing={5}
-                    >
-                      <Image
-                        src={metadata.image}
-                        h="40vh"
-                        w={{ base: "100%", lg: "60vh" }}
-                        objectFit="cover"
-                        flexShrink={0}
-                        borderRadius="md"
-                      />
-                      <VStack w="100%" align="center">
-                        <Box>
-                          <Text
-                            fontFamily="heading"
-                            fontSize="4xl"
-                            fontWeight="bold"
-                          >
-                            {metadata.name}
-                          </Text>
-                          <Text
-                            color={accentColor}
-                            fontSize="sm"
-                          >
-                            {distance}
-                          </Text>
-                          <Text
-                            color={accentColor}
-                            fontSize="sm"
-                          >
-                            By: {metadata.authors.join(", ")}
-                          </Text>
-                          <Text>
-                            {metadata.description
-                              .map((r) => r.plainText)
-                              .join("")}
-                          </Text>
-                        </Box>
-                      </VStack>
-                    </HStack>
-                  </Card>
-                );
-              })}
+                    <Image
+                      src={metadata.image}
+                      h="40vh"
+                      w={{ base: "100%", lg: "60vh" }}
+                      objectFit="cover"
+                      flexShrink={0}
+                      borderRadius="md"
+                    />
+                    <VStack w="100%" align="center">
+                      <Box>
+                        <Text
+                          fontFamily="heading"
+                          fontSize="4xl"
+                          fontWeight="bold"
+                        >
+                          {metadata.name}
+                        </Text>
+                        <Text
+                          color={accentColor}
+                          fontSize="sm"
+                        >
+                          {distance}
+                        </Text>
+                        <Text
+                          color={accentColor}
+                          fontSize="sm"
+                        >
+                          By: {metadata.authors.join(", ")}
+                        </Text>
+                        <Text>
+                          {metadata.description
+                            .map((r) => r.plainText)
+                            .join("")}
+                        </Text>
+                      </Box>
+                    </VStack>
+                  </HStack>
+                </Card>
+              );
+            })}
           </SimpleGrid>
         </VStack>
       </Container>
     );
   } else {
-    return <></>
+    return <></>;
   }
-  
 };
 
 export default Featured;

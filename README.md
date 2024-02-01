@@ -5,6 +5,7 @@
 </div>
 
 ### 👨🏾‍💻 Tech Stack
+
 - **Language:** TypeScript
 - **Frontend:** React
 - **UI Framework:** ChakraUI
@@ -13,27 +14,34 @@
 - **CMS/Database:** Notion
 
 ### 🤸🏾‍♂️ Usage
+
 #### 🚧 Prerequisites
+
 - Have `npm` or `yarn` installed!
 - Have the server up and running, check the documentation [here](https://github.com/ammar-ahmed22/zsquared-server) for instructions!
 
 ### ⚙️ Running locally
+
 1. **Clone the repository:**
+
 ```sh
 git clone https://github.com/ammar-ahmed22/zsquared-client.git
 ```
 
 2. **Install dependencies:**
+
 ```sh
 yarn # npm i
 ```
 
 3. **Start the app:**
+
 ```sh
 yarn start # npm start
 ```
 
 ### 📥 Issues
+
 Feel free to raise an [issue](https://github.com/ammar-ahmed22/zsquared-client/issues) with any bugs, features or design changes!
 
 All Rights Reserved (Ammar Ahmed, 2024)
