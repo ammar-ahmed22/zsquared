@@ -17,7 +17,7 @@ const Router: React.FC = () => {
     },
     {
       path: "/about",
-      element: <div>About</div>,
+      element: <div>Coming soon...</div>,
       navigationOption: "about",
     },
     {
