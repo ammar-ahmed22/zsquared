@@ -23,7 +23,7 @@ const root = ReactDOM.createRoot(container);
 const baseURI =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8080"
-    : "domain";
+    : "https://zsquared-server.fly.dev";
 
 const link = new HttpLink({
   uri: baseURI + "/graphql",
