@@ -36,7 +36,4 @@ yarn start # npm start
 ### 📥 Issues
 Feel free to raise an [issue](https://github.com/ammar-ahmed22/zsquared-client/issues) with any bugs, features or design changes!
 
-### 📄 License
-This project is proprietary and confidential. Unauthorized copying of files, via any medium, is strictly prohibited.
-
 All Rights Reserved (Ammar Ahmed, 2024)
