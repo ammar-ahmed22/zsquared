@@ -2,7 +2,7 @@ import { extendTheme } from "@chakra-ui/react";
 import { StyleFunctionProps } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 import { inputAnatomy } from "@chakra-ui/anatomy";
-import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 
 const fonts = {
   body: "Noto Sans, sans-serif",
