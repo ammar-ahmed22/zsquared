@@ -20,7 +20,7 @@
 ### ⚙️ Running locally
 1. **Clone the repository:**
 ```sh
-git clone https://google.ca
+git clone https://github.com/ammar-ahmed22/zsquared-client.git
 ```
 
 2. **Install dependencies:**
