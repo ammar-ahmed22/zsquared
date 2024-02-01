@@ -1,6 +1,8 @@
 import { extendTheme } from "@chakra-ui/react";
 import { StyleFunctionProps } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
+import { inputAnatomy } from "@chakra-ui/anatomy";
+import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
 
 const fonts = {
   body: "Noto Sans, sans-serif",
@@ -55,6 +57,52 @@ const colors = {
   },
 };
 
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(inputAnatomy.keys);
+const branded = definePartsStyle({
+  field: {
+    border: "1px solid",
+    borderColor: "gray.400",
+    background: "brand.light.500",
+    _focusVisible: {
+      boxShadow(theme) {
+        return `0 0 0 1px ${theme.colors.brand.green["500"]}`;
+      },
+      zIndex: 1,
+      borderColor: "brand.green.500",
+    },
+    _placeholder: {
+      color: "gray.500",
+    },
+    _dark: {
+      borderColor: "gray.600",
+      background: "brand.dark.900",
+    },
+  },
+  addon: {
+    border: "1px solid",
+    borderColor: "gray.200",
+    background: "brand.light.500",
+    color: "gray.500",
+
+    _dark: {
+      borderColor: "gray.600",
+      background: "brand.dark.900",
+      color: "gray.400",
+    },
+  },
+  element: {
+    color: "brand.green.600",
+    _dark: {
+      color: "brand.green.500",
+    },
+  },
+});
+
+const inputTheme = defineMultiStyleConfig({
+  variants: { branded },
+});
+
 const components = {
   Text: {
     variants: {
@@ -92,6 +140,7 @@ const components = {
       },
     },
   },
+  Input: inputTheme,
 };
 
 const styles = {

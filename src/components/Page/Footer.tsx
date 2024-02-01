@@ -16,7 +16,6 @@ const Footer: React.FC = () => {
   );
   return (
     <VStack
-      mt="5"
       py="5"
       borderTopStyle="solid"
       borderTopWidth="1px"

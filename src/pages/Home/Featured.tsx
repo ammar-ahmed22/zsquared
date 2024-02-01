@@ -44,13 +44,16 @@ const Featured: React.FC = () => {
     "rgba(0, 0, 0, 0.6)",
   );
 
-  return (
-    <Container
-      maxW={{ base: "100%", md: "container.lg" }}
-      mt="5"
-    >
-      <VStack align="flex-start" p="5">
-        {!loading && data && data.metadata.length > 0 && (
+  const shouldRender =
+    !loading && data && data.metadata.length > 0;
+
+  if (shouldRender) {
+    return (
+      <Container
+        maxW={{ base: "100%", md: "container.lg" }}
+        mt="5"
+      >
+        <VStack align="flex-start" p="5">
           <Text
             fontFamily="heading"
             fontSize="4xl"
@@ -59,11 +62,8 @@ const Featured: React.FC = () => {
           >
             Featured Posts:
           </Text>
-        )}
-        <SimpleGrid columns={{ base: 1, lg: 2 }}>
-          {!loading &&
-            data &&
-            data.metadata.map((metadata, i) => {
+          <SimpleGrid columns={{ base: 1, lg: 2 }}>
+            {data.metadata.map((metadata, i) => {
               const date = new Date(metadata.publishDate);
               const now = new Date();
               const distance = formatDistance(date, now, {
@@ -123,10 +123,13 @@ const Featured: React.FC = () => {
                 </Card>
               );
             })}
-        </SimpleGrid>
-      </VStack>
-    </Container>
-  );
+          </SimpleGrid>
+        </VStack>
+      </Container>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default Featured;
