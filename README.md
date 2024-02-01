@@ -15,7 +15,7 @@
 ### 🤸🏾‍♂️ Usage
 #### 🚧 Prerequisites
 - Have `npm` or `yarn` installed!
-- Have the server up and running, check the documentation here for instructions!
+- Have the server up and running, check the documentation [here](https://github.com/ammar-ahmed22/zsquared-server) for instructions!
 
 ### ⚙️ Running locally
 1. **Clone the repository:**
@@ -34,7 +34,7 @@ yarn start # npm start
 ```
 
 ### 📥 Issues
-Feel free to raise an [issue](https://google.ca) with any bugs, features or design changes!
+Feel free to raise an [issue](https://github.com/ammar-ahmed22/zsquared-client/issues) with any bugs, features or design changes!
 
 ### 📄 License
 This project is proprietary and confidential. Unauthorized copying of files, via any medium, is strictly prohibited.
