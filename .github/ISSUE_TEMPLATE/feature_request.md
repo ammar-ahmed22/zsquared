@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
+title: '[FEAT]: Short Description of the Feature'
 labels: enhancement
 assignees: ammar-ahmed22
 
