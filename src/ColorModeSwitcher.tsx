@@ -21,8 +21,8 @@ export const ColorModeSwitcher: React.FC<
 
   return (
     <IconButton
-      size="md"
-      fontSize="lg"
+      size={{ base: "sm", md: "md" }}
+      fontSize={{ base: "sm", md: "md" }}
       variant="ghost"
       colorScheme={useColorModeValue(
         "brand.dark",

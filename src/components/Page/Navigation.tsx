@@ -33,7 +33,7 @@ const Navigation: React.FC<NavigationProps> = ({
     return str[0].toUpperCase() + str.substring(1);
   };
   return (
-    <Container maxW={{ base: "100%", md: "container.lg" }}>
+    <Container maxW={{ base: "100%", md: "container.lg" }} p={0}>
       <HStack h="10vh" justify="space-between">
         <Link
           as={ReactLink}
@@ -49,7 +49,7 @@ const Navigation: React.FC<NavigationProps> = ({
             filter={greenFilter}
           />
           <Text
-            fontSize="md"
+            fontSize={{ base: "sm", md: "md" }}
             ml="3"
             fontFamily="heading"
             fontWeight="extrabold"
@@ -57,18 +57,18 @@ const Navigation: React.FC<NavigationProps> = ({
             Z Squared
           </Text>
         </Link>
-        <HStack px="10" spacing="4">
+        <HStack px="0" spacing="4">
           {NAVIGATION_OPTIONS.map((option) => {
             return (
               <Link
                 key={option}
                 as={ReactLink}
+                fontSize={{ base: "sm", md: "md" }}
                 to={"/" + (option === "home" ? "" : option)}
                 fontWeight={
                   active === option ? "bold" : "normal"
                 }
                 pos="relative"
-                // color={active === option ? "brand.green.500" : "current"}
                 _after={{
                   content: '" "',
                   pos: "absolute",
