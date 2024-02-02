@@ -49,7 +49,7 @@ const Navigation: React.FC<NavigationProps> = ({
             filter={greenFilter}
           />
           <Text
-            fontSize="md"
+            fontSize={{ base: "sm", md: "md" }}
             ml="3"
             fontFamily="heading"
             fontWeight="extrabold"
@@ -63,6 +63,7 @@ const Navigation: React.FC<NavigationProps> = ({
               <Link
                 key={option}
                 as={ReactLink}
+                fontSize={{ base: "sm", md: "md" }}
                 to={"/" + (option === "home" ? "" : option)}
                 fontWeight={
                   active === option ? "bold" : "normal"
