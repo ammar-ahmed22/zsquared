@@ -42,7 +42,7 @@ const Home: React.FC = () => {
             </HStack>
             <Text
               fontWeight="extrabold"
-              fontSize="8xl"
+              fontSize={{ base: "6xl", md: "8xl" }}
               fontFamily="heading"
               color="brand.light.500"
               variant="blackOutline"
@@ -59,14 +59,14 @@ const Home: React.FC = () => {
             <HStack mt="3">
               <Button
                 colorScheme="brand.green"
-                size="lg"
+                size={{ base: "md", md: "lg" }}
                 onClick={() => nav("/articles")}
               >
                 Articles
               </Button>
               <Button
                 colorScheme="brand.light"
-                size="lg"
+                size={{ base: "md", md: "lg" }}
                 variant="outline"
                 _hover={{
                   color: "brand.dark.900",
