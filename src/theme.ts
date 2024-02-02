@@ -152,6 +152,7 @@ const styles = {
         "brand.light.500",
       )(props),
       overflowX: "hidden",
+      maxWidth: "100%"
     },
   }),
 };
