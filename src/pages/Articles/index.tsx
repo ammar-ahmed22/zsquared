@@ -131,7 +131,7 @@ const Articles: React.FC = () => {
   );
 
   return (
-    <Box w="100%">
+    <Box w="100%" px="2" >
       <Helmet>
         <title>Articles</title>
       </Helmet>
@@ -140,11 +140,11 @@ const Articles: React.FC = () => {
           fontFamily="heading"
           as="h1"
           textAlign="center"
-          size="3xl"
+          size={{ base: "xl", md: "3xl" }}
         >
           📝 <Text as="span">Articles</Text>
         </Heading>
-        <Text align="center" fontSize="2xl">
+        <Text align="center" fontSize={{ base: "lg", md: "2xl" }}>
           Corporations, creed, culture and everything in
           between.
         </Text>
@@ -165,7 +165,7 @@ const Articles: React.FC = () => {
                   key={category}
                   variant="solid"
                   colorScheme="brand.green"
-                  size="lg"
+                  size={{ base: "md", md: "lg" }}
                   transform="scale(0.95)"
                   transition="transform .2s ease-in-out"
                   _hover={{
