@@ -146,7 +146,7 @@ const components = {
 const styles = {
   global: (props: StyleFunctionProps) => ({
     body: {
-      bg: mode("brand.light.500", "brand.dark.900")(props),
+      bg: "bg.subtle",
       color: mode(
         "brand.dark.900",
         "brand.light.500",

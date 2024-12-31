@@ -18,13 +18,6 @@ const Home: React.FC = () => {
   const nav = useNavigate();
   return (
     <>
-      <Box
-        minH="100vh"
-        backgroundImage={`url(${mountain3})`}
-        backgroundSize="cover"
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-      >
         <Helmet>
           <title>Home</title>
         </Helmet>
@@ -80,7 +73,6 @@ const Home: React.FC = () => {
             </HStack>
           </Center>
         </Container>
-      </Box>
       <Featured />
     </>
   );
