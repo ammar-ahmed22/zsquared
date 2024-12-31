@@ -37,7 +37,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "update-types": "yarn remove @z-squared/types && yarn add @z-squared/types && yarn install && yarn upgrade",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "start-network": "REACT_APP_LOCALIP=$(ipconfig getifaddr en0) yarn start --host $(ipconfig getifaddr en0)"
   },
   "eslintConfig": {
     "extends": "react-app"

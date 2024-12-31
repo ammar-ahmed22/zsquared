@@ -22,8 +22,10 @@ const root = ReactDOM.createRoot(container);
 
 const baseURI =
   process.env.NODE_ENV === "development"
-    ? "http://localhost:8080"
+    ? process.env.REACT_APP_LOCALIP ? `http://${process.env.REACT_APP_LOCALIP}:8080` : "http://localhost:8080"
     : "https://zsquared-server.fly.dev";
+
+if (process.env.NODE_ENV === "development") console.log("API HOST:", baseURI);
 
 const link = new HttpLink({
   uri: baseURI + "/graphql",
