@@ -24,7 +24,6 @@ const Home: React.FC = () => {
         <Container
           maxW={{ base: "100%", md: "container.lg" }}
           h="100%"
-          // p={0}
         >
           <Center
             flexDirection="column"
