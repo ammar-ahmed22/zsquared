@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider defaultTheme="dark" rootSelector=":root">
+    <ThemeProvider defaultTheme="light" rootSelector=":root">
       <html
         lang="en"
         className={`${dmSerifDisplay.variable} ${dmSerifText.variable} ${dmSans.variable} ${dmMono.variable}`}>
