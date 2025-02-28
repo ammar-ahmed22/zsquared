@@ -28,9 +28,18 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z Squared",
+  title: {
+    template: "%s | Z Squared",
+    default: "Z Squared",
+    absolute: "Home | Z Squared",
+  },
+  icons: {
+    icon: "/favicon/favicon.ico",
+    apple: "/favicon/apple-touch-icon.png",
+  },
   description:
     "Zaryab Ahmed and Zaid Marfatia's joint blog website where they write about Creed, Corporartions, Culture and everything in between.",
+  openGraph: {}, // TODO: Add open graph meta tags - https://linear.app/ammar-ahmed/issue/AMM-74/add-og-metadata-with-gif-of-home-page
 };
 
 export default function RootLayout({
@@ -39,11 +48,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${dmSerifDisplay.variable} ${dmSerifText.variable} ${dmSans.variable} ${dmMono.variable} antialiased`}>
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${dmSerifDisplay.variable} ${dmSerifText.variable} ${dmSans.variable} ${dmMono.variable}`}>
+      <body className={`antialiased`}>{children}</body>
     </html>
   );
 }

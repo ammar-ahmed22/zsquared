@@ -7,8 +7,8 @@
 @theme {
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-dm-mono);
-  --font-serif: var(--font-serif-text);
-  --font-display: var(--font-serif-display);
+  --font-serif: var(--font-dm-serif-text);
+  --font-display: var(--font-dm-serif-display);
 }
 
 :root {
