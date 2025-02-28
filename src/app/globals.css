@@ -122,10 +122,23 @@
 }
 
 @layer base {
+  body {
+    @apply font-sans;
+  }
+
+  .text-neutral {
+    @apply text-neutral-600
+  }
+  .dark .text-neutral {
+    @apply text-neutral-400
+  }
+}
+
+@layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
   }
 }
