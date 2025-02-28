@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/context/theme";
 import Navbar from "./components/navbar";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
+import Footer from "./components/footer";
 
 const dmSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
@@ -59,6 +60,7 @@ export default function RootLayout({
           <NextTopLoader color="var(--primary)" />
           <Navbar />
           <main className="mt-[15vh] px-3">{children}</main>
+          <Footer />
         </body>
       </html>
     </ThemeProvider>
