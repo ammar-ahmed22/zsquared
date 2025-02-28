@@ -6,6 +6,8 @@ import {
   DM_Mono,
 } from "next/font/google";
 import { ThemeProvider } from "@/context/theme";
+import Navbar from "./components/navbar";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -53,7 +55,11 @@ export default function RootLayout({
       <html
         lang="en"
         className={`${dmSerifDisplay.variable} ${dmSerifText.variable} ${dmSans.variable} ${dmMono.variable}`}>
-        <body className={`antialiased`}>{children}</body>
+        <body className="antialiased">
+          <NextTopLoader color="var(--primary)" />
+          <Navbar />
+          <main className="mt-[15vh] px-3">{children}</main>
+        </body>
       </html>
     </ThemeProvider>
   );
