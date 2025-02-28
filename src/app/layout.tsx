@@ -5,6 +5,7 @@ import {
   DM_Sans,
   DM_Mono,
 } from "next/font/google";
+import { ThemeProvider } from "@/context/theme";
 import "./globals.css";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -48,10 +49,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${dmSerifDisplay.variable} ${dmSerifText.variable} ${dmSans.variable} ${dmMono.variable}`}>
-      <body className={`antialiased`}>{children}</body>
-    </html>
+    <ThemeProvider defaultTheme="dark" rootSelector=":root">
+      <html
+        lang="en"
+        className={`${dmSerifDisplay.variable} ${dmSerifText.variable} ${dmSans.variable} ${dmMono.variable}`}>
+        <body className={`antialiased`}>{children}</body>
+      </html>
+    </ThemeProvider>
   );
 }
