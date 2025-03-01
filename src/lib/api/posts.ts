@@ -40,9 +40,7 @@ class Posts {
     }
     let image: string | undefined = undefined;
     if (page.cover) {
-      // TODO: Implement the notion assets api endpoints - https://linear.app/ammar-ahmed/issue/AMM-75/create-notion-assets-api-endpoints
-      image = undefined;
-      // image = `/api/notion-assets/page/${page.id}/cover`;
+      image = `/api/notion-assets/page/${page.id}/cover`;
     }
     return {
       id: page.id,
