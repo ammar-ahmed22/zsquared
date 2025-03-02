@@ -55,7 +55,7 @@ class Posts {
     const dbSlug = toPlainText(properties.get("Slug").asRichText());
     let genSlug: string | undefined = undefined;
     if (!dbSlug) {
-      genSlug = toSlug(properties.get("name").asTitle());
+      genSlug = toSlug(properties.get("Name").asTitle());
       await updatePage(page.id, {
         Slug: {
           rich_text: [
