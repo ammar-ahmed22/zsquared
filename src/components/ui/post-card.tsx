@@ -1,6 +1,7 @@
 "use client";
 import { PostMetadata } from "@/types/api";
 import { Card, CardHeader, CardContent } from "./card";
+import RichText from "./rich-text";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -44,9 +45,7 @@ export default function PostCard({
             </h2>
           </CardHeader>
           <CardContent>
-            <p className="text-neutral">
-              {post.description.map((r) => r.plainText).join(" ")}
-            </p>
+            <RichText text={post.description} as="p" />
             <span className="text-primary font-semibold hover:underline">
               Read more
             </span>
