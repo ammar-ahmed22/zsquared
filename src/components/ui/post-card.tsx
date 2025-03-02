@@ -4,6 +4,7 @@ import { Card, CardHeader, CardContent } from "./card";
 import RichText from "./rich-text";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { format } from "date-fns";
 
 export type PostCardProps = {
   post: PostMetadata;
@@ -43,6 +44,11 @@ export default function PostCard({
             <h2 className="font-display font-semibold sm:text-2xl text-xl">
               {post.name}
             </h2>
+            {post.date && (
+              <small className="text-neutral">
+                {format(post.date, "MMM dd, yyyy")}
+              </small>
+            )}
           </CardHeader>
           <CardContent>
             <RichText text={post.description} as="p" />
