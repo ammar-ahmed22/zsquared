@@ -4,6 +4,7 @@ import { Card, CardHeader, CardContent } from "./card";
 import RichText from "./rich-text";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import { format } from "date-fns";
 
 export type PostCardProps = {
@@ -17,7 +18,7 @@ export default function PostCard({
 }: PostCardProps) {
   return (
     <>
-      <a href={`/blog/${post.slug}`}>
+      <Link href={`/blog/${post.slug}`}>
         <Card
           className={cn(
             "border-none shadow-none hover:bg-neutral-200/40",
@@ -57,7 +58,7 @@ export default function PostCard({
             </span>
           </CardContent>
         </Card>
-      </a>
+      </Link>
       {!isLast && <hr />}
     </>
   );

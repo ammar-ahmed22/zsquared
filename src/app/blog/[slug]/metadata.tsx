@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { ArrowLeftIcon } from "lucide-react";
 import Image from "next/image";
 import { format } from "date-fns";
+import Link from "next/link";
 
 export type MetadataProps = {
   metadata: PostMetadata;
@@ -12,7 +13,7 @@ export type MetadataProps = {
 export default function Metadata({ metadata }: MetadataProps) {
   return (
     <div className="flex flex-col gap-4">
-      <a
+      <Link
         href="/blog"
         className={buttonVariants({
           variant: "ghost",
@@ -20,7 +21,7 @@ export default function Metadata({ metadata }: MetadataProps) {
         })}>
         <ArrowLeftIcon className="size-4" />
         Back
-      </a>
+      </Link>
       <div>
         <p className="font-bold uppercase">
           {metadata.categories.join(" • ")}
