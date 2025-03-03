@@ -28,10 +28,11 @@ const navItems: NavItem[] = [
     name: "Home",
     link: "/",
   },
-  {
-    name: "About",
-    link: "/about",
-  },
+  // TODO: Enable about navigation when the post is ready
+  // {
+  //   name: "About",
+  //   link: "/about",
+  // },
   {
     name: "Blog",
     link: "/blog",
