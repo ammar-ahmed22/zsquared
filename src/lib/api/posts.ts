@@ -113,6 +113,15 @@ class Posts {
       });
     }
 
+    if (process.env.NODE_ENV === "production") {
+      and.push({
+        property: "Categories",
+        multi_select: {
+          does_not_contain: "Testing",
+        },
+      });
+    }
+
     const response = await databases.blog.query({
       filter: {
         and,
