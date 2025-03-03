@@ -128,7 +128,7 @@ export const CarouselCard = ({
           <motion.p className="text-white text-sm md:text-base font-medium font-sans text-left">
             {category}
           </motion.p>
-          <motion.p className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2">
+          <motion.p className="text-white text-xl md:text-2xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2">
             {title}
           </motion.p>
         </div>

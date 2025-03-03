@@ -35,14 +35,14 @@ export default function Hero() {
             className="sm:h-20 h-14 w-auto"
           />
           <div>
-            <h2 className="font-bold sm:text-6xl text-4xl font-display">
+            <h1 className="font-bold sm:text-5xl text-3xl font-display">
               Let&apos;s talk
               <FlipWords
                 words={["Creed", "Corporations", "Culture"]}
                 className="text-primary dark:text-primary"
               />
-            </h2>
-            <p className="text-default-500 sm:text-2xl text-lg">
+            </h1>
+            <p className="text-default-500 sm:text-xl text-lg">
               Zaryab and Zaid&apos;s joint blog.
             </p>
           </div>
