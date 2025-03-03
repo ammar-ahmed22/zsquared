@@ -1,6 +1,6 @@
 import { RichText } from "@/types/api";
 import {
-    BlockObjectResponse,
+  BlockObjectResponse,
   DatabaseObjectResponse,
   PageObjectResponse,
   PartialDatabaseObjectResponse,

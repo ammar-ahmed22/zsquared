@@ -14,11 +14,13 @@ import Footer from "./components/footer";
 const dmSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif-display",
   weight: "400",
+  subsets: ["latin"],
 });
 
 const dmSerifText = DM_Serif_Text({
   variable: "--font-dm-serif-text",
   weight: "400",
+  subsets: ["latin"],
 });
 
 const dmSans = DM_Sans({
@@ -29,6 +31,7 @@ const dmSans = DM_Sans({
 const dmMono = DM_Mono({
   variable: "--font-dm-mono",
   weight: ["300", "400", "500"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
