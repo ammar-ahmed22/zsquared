@@ -34,6 +34,8 @@ const dmMono = DM_Mono({
   subsets: ["latin"],
 });
 
+const description =
+  "Zaryab Ahmed and Zaid Marfatia's joint blog website where they write about Creed, Corporartions, Culture and everything in between.";
 export const metadata: Metadata = {
   title: {
     template: "%s | Z Squared",
@@ -44,9 +46,13 @@ export const metadata: Metadata = {
     icon: "/favicon/favicon.ico",
     apple: "/favicon/apple-touch-icon.png",
   },
-  description:
-    "Zaryab Ahmed and Zaid Marfatia's joint blog website where they write about Creed, Corporartions, Culture and everything in between.",
-  openGraph: {}, // TODO: Add open graph meta tags - https://linear.app/ammar-ahmed/issue/AMM-74/add-og-metadata-with-gif-of-home-page
+  description,
+  openGraph: {
+    type: "website",
+    description,
+    siteName: "zsquared.ca",
+    images: ["/zsquared-home.gif"],
+  },
 };
 
 export default function RootLayout({
