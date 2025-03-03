@@ -1,5 +1,7 @@
 import { api } from "@/lib/api";
 import Metadata from "./metadata";
+import Block from "./block";
+
 export type BlogPostProps = {
   params: Promise<{ slug: string }>;
 };
@@ -11,6 +13,11 @@ export default async function BlogPost(props: BlogPostProps) {
   return (
     <div className="max-w-4xl mx-auto">
       <Metadata metadata={metadata} />
+      <div className="flex flex-col w-full gap-3">
+        {content.map((block) => {
+          return <Block key={block.id} block={block} />;
+        })}
+      </div>
     </div>
   );
 }
