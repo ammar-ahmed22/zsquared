@@ -10,13 +10,13 @@ export default async function Blog() {
     <div className="max-w-4xl mx-auto flex flex-col gap-8">
       <div className="w-full flex flex-col items-center">
         <div className="flex gap-2 items-center">
-          <BookIcon className="size-8 fill-primary" />
+          <BookIcon className="size-10 fill-primary" />
           <h1 className="font-display font-bold text-4xl text-center">
-            Articles
+            Blog
           </h1>
         </div>
         <p className="text-lg">
-          Creed, coroporations, culture, and everything in between.
+          Creed, corporations, culture, and everything in between.
         </p>
       </div>
       <div className="flex flex-col gap-8">
