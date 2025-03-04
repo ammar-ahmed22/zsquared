@@ -1,6 +1,6 @@
 <div align="center">
     <img src="./public/logo-brand.png" height="50" width="50" />
-    <img src="./public/zsquared-home.gif" width="1600" height="900" />
+    <img src="./public/zsquared-home.gif" width="1600" />
     <h1>Z Squared</h1>
     <p>Welcome to the official documentation for the Z Squared website, a modern full-stack blog website using Next.js and React, with Notion serving as the backend CMS/database.</p>
 </div>
