@@ -25,28 +25,18 @@ const isObjectType = (obj: string): obj is ObjectType => {
   return ALLOWED_OBJECTS.includes(obj);
 };
 
-const isPageResourceType = (
-  resource: string,
-): resource is PageResourceType => {
+const isPageResourceType = (resource: string): resource is PageResourceType => {
   return ALLOWED_PAGE_RESOURCES.includes(resource);
 };
 
-const isBlockResourceType = (
-  resouce: string,
-): resouce is BlockResourceType => {
+const isBlockResourceType = (resouce: string): resouce is BlockResourceType => {
   return ALLOWED_BLOCK_RESOURCES.includes(resouce);
 };
 
-const handleBlockObject = async (
-  id: string,
-  resource: BlockResourceType,
-) => {
+const handleBlockObject = async (id: string, resource: BlockResourceType) => {
   const block = await notion.blocks.retrieve({ block_id: id });
   if (!isFullBlock(block)) {
-    return NextResponse.json(
-      { error: "Invalid block" },
-      { status: 400 },
-    );
+    return NextResponse.json({ error: "Invalid block" }, { status: 400 });
   }
 
   if (resource === "image" && block.type === "image") {
@@ -73,16 +63,10 @@ const handleBlockObject = async (
   );
 };
 
-const handlePageObject = async (
-  id: string,
-  resource: PageResourceType,
-) => {
+const handlePageObject = async (id: string, resource: PageResourceType) => {
   const page = await notion.pages.retrieve({ page_id: id });
   if (!isFullPage(page)) {
-    return NextResponse.json(
-      { error: "Invalid page" },
-      { status: 400 },
-    );
+    return NextResponse.json({ error: "Invalid page" }, { status: 400 });
   }
 
   if (resource === "cover" && page.cover) {
@@ -106,10 +90,7 @@ const handlePageObject = async (
     return fetchImageResponse(imageUrl);
   }
 
-  return NextResponse.json(
-    { error: "Resource not found" },
-    { status: 404 },
-  );
+  return NextResponse.json({ error: "Resource not found" }, { status: 404 });
 };
 
 export async function GET(_: NextRequest, { params }: Options) {
@@ -117,10 +98,7 @@ export async function GET(_: NextRequest, { params }: Options) {
     const { id, resource, object } = await params;
 
     if (!isObjectType(object)) {
-      return NextResponse.json(
-        { error: "Invalid object" },
-        { status: 400 },
-      );
+      return NextResponse.json({ error: "Invalid object" }, { status: 400 });
     }
 
     if (object === "page") {
@@ -143,10 +121,7 @@ export async function GET(_: NextRequest, { params }: Options) {
       return handleBlockObject(id, resource);
     }
 
-    return NextResponse.json(
-      { error: "Resource not found" },
-      { status: 404 },
-    );
+    return NextResponse.json({ error: "Resource not found" }, { status: 404 });
   } catch (error) {
     console.error(error);
     return NextResponse.json(

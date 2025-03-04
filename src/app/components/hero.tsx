@@ -1,9 +1,7 @@
 "use client";
 import Image from "next/image";
 import FlipWords from "@/components/ui/flip-words";
-import AppleCarousel, {
-  CarouselItem,
-} from "@/components/ui/apple-carousel";
+import AppleCarousel, { CarouselItem } from "@/components/ui/apple-carousel";
 
 const carouselItems: CarouselItem[] = [
   {

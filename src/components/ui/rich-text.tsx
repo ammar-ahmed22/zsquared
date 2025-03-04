@@ -10,16 +10,11 @@ export type RichTextProps = {
   className?: string;
 };
 
-export default function RichText({
-  text,
-  as = "p",
-  className,
-}: RichTextProps) {
+export default function RichText({ text, as = "p", className }: RichTextProps) {
   const Component = as;
 
   return (
-    <Component
-      className={cn("text-neutral whitespace-pre-line", className)}>
+    <Component className={cn("text-neutral whitespace-pre-line", className)}>
       <Mathjax.Provider>
         {text.map((richText, index) => {
           const { annotations, plainText } = richText;
@@ -30,8 +25,7 @@ export default function RichText({
             underline: annotations.underline,
             "bg-primary/20 dark:bg-primary/80 font-mono text-neutral-800 dark:text-neutral-300 py-0.5 px-2 rounded-sm text-sm":
               annotations.code,
-            "text-primary hover:underline cursor-pointer":
-              annotations.href,
+            "text-primary hover:underline cursor-pointer": annotations.href,
           });
           const key = `richtext-${index}`;
           if (annotations.href) {
@@ -41,7 +35,8 @@ export default function RichText({
                 className={className}
                 href={annotations.href}
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+              >
                 {plainText}
               </a>
             );
@@ -49,11 +44,7 @@ export default function RichText({
 
           if (annotations.equation) {
             return (
-              <Mathjax.Node
-                key={key}
-                inline
-                formula={richText.plainText}
-              />
+              <Mathjax.Node key={key} inline formula={richText.plainText} />
             );
           }
           return (

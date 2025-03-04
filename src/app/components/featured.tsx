@@ -21,9 +21,7 @@ export default function Featured({ posts }: FeaturedProps) {
       <div className="flex flex-col gap-8">
         {posts.map((post, i) => {
           const isLast = i === posts.length - 1;
-          return (
-            <PostCard key={post.slug} post={post} isLast={isLast} />
-          );
+          return <PostCard key={post.slug} post={post} isLast={isLast} />;
         })}
       </div>
     </section>

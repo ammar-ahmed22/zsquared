@@ -46,7 +46,6 @@ export type BlogPostProps = {
 export default async function BlogPost(props: BlogPostProps) {
   const { slug } = await props.params;
   const { metadata, content } = await api.posts.content({ slug });
-  console.log({ metadata, content });
   return (
     <div className="max-w-4xl mx-auto">
       <Metadata metadata={metadata} />

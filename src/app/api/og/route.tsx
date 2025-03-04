@@ -35,7 +35,8 @@ export async function GET(request: Request) {
           flexDirection: "column",
           justifyContent: "space-between",
           alignItems: "flex-start",
-        }}>
+        }}
+      >
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
@@ -44,7 +45,8 @@ export async function GET(request: Request) {
               fontWeight: "bold",
               marginBottom: 16,
               color: "#218c74",
-            }}>
+            }}
+          >
             {title}
           </div>
           <div
@@ -52,7 +54,8 @@ export async function GET(request: Request) {
               fontFamily: "DM Sans",
               fontSize: 24,
               color: "#525252",
-            }}>
+            }}
+          >
             {description}
           </div>
         </div>
@@ -62,7 +65,8 @@ export async function GET(request: Request) {
             justifyContent: "flex-end",
             alignItems: "center",
             width: "100%",
-          }}>
+          }}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={
@@ -75,9 +79,7 @@ export async function GET(request: Request) {
             height={100}
             style={{ marginRight: 24 }}
           />
-          <div style={{ fontFamily: "DM Sans", fontSize: 24 }}>
-            zsquared.ca
-          </div>
+          <div style={{ fontFamily: "DM Sans", fontSize: 24 }}>zsquared.ca</div>
         </div>
       </div>
     ),

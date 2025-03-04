@@ -33,9 +33,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   useEffect(() => {
     const root = document.querySelector(rootSelector) as HTMLElement;
     if (root && defaultClasses !== "") {
-      root.classList.add(
-        ...defaultClasses.split(" ").map((s) => s.trim()),
-      );
+      root.classList.add(...defaultClasses.split(" ").map((s) => s.trim()));
     }
   }, [defaultClasses, rootSelector]);
 

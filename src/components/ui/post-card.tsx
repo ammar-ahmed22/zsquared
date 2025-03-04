@@ -12,20 +12,15 @@ export type PostCardProps = {
   isLast?: boolean;
 };
 
-export default function PostCard({
-  post,
-  isLast = false,
-}: PostCardProps) {
+export default function PostCard({ post, isLast = false }: PostCardProps) {
   return (
     <>
       <Link href={`/blog/${post.slug}`}>
         <Card
-          className={cn(
-            "border-none shadow-none hover:bg-neutral-200/40",
-            {
-              "pt-0": !!post.image,
-            },
-          )}>
+          className={cn("border-none shadow-none hover:bg-neutral-200/40", {
+            "pt-0": !!post.image,
+          })}
+        >
           {post.image && (
             <Image
               src={post.image}
@@ -39,9 +34,7 @@ export default function PostCard({
             <small className="font-bold uppercase">
               {post.categories.join(" • ")}
             </small>
-            <span className="text-neutral">
-              {post.authors.join(", ")}
-            </span>
+            <span className="text-neutral">{post.authors.join(", ")}</span>
             <h2 className="font-display font-semibold sm:text-2xl text-xl">
               {post.name}
             </h2>

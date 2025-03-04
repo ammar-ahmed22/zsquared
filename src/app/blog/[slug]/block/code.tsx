@@ -28,12 +28,9 @@ const Code: React.FC<CodeBlock> = (block) => {
           "!block": copied,
         })}
         variant="ghost"
-        onClick={handleCopy}>
-        {copied ? (
-          <CheckIcon className="text-green-500" />
-        ) : (
-          <ClipboardIcon />
-        )}
+        onClick={handleCopy}
+      >
+        {copied ? <CheckIcon className="text-green-500" /> : <ClipboardIcon />}
       </Button>
       <SyntaxHighlighter
         showLineNumbers
@@ -46,7 +43,8 @@ const Code: React.FC<CodeBlock> = (block) => {
         language={block.language}
         lineProps={{ style: { backgroundColor: "transparent" } }}
         style={style}
-        PreTag="div">
+        PreTag="div"
+      >
         {block.content}
       </SyntaxHighlighter>
       {block.caption.length > 0 && (

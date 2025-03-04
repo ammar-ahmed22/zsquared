@@ -34,7 +34,8 @@ export const ListItem: React.FC<ListItemProps> = ({
           className={cn("list-inside", {
             "list-[revert]": type === "unordered",
             "list-[lower-alpha]": type === "ordered",
-          })}>
+          })}
+        >
           {data.children.map((child, idx) => {
             return (
               <ListItem
@@ -52,9 +53,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   );
 };
 
-export const UnorderedList: React.FC<UnorderedListBlock> = (
-  block,
-) => {
+export const UnorderedList: React.FC<UnorderedListBlock> = (block) => {
   return (
     <ul className="list-disc list-inside">
       {block.content.map((item, idx) => {

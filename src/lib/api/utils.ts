@@ -27,8 +27,7 @@ export async function fetchImageResponse(url: string) {
     status: 200,
     headers: {
       "Content-Type": contentType,
-      "Cache-Control":
-        "no-store, no-cache, must-revalidate, proxy-revalidate",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
       Pragma: "no-cache",
       Expires: "0",
     },

@@ -40,9 +40,7 @@ class Database {
 }
 
 if (!process.env.BLOG_DB_ID) {
-  throw new Error(
-    "Please set the BLOG_DATABASE_ID environment variable",
-  );
+  throw new Error("Please set the BLOG_DATABASE_ID environment variable");
 }
 
 export const databases = {

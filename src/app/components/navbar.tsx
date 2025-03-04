@@ -90,7 +90,8 @@ export default function Navbar() {
           {
             "border-none shadow-none": lastY === 0,
           },
-        )}>
+        )}
+      >
         <Image
           src={logoSrc}
           alt="Logo for ammarahmed.ca"
@@ -102,10 +103,7 @@ export default function Navbar() {
           <>
             <div className="flex gap-12">
               {navItems.map((navItem: NavItem, idx: number) => {
-                const isActive = isNavItemActive(
-                  navItem.link,
-                  pathname,
-                );
+                const isActive = isNavItemActive(navItem.link, pathname);
                 return (
                   <Link
                     key={`link=${idx}`}
@@ -116,7 +114,8 @@ export default function Navbar() {
                         "dark:text-foreground text-foreground border-b border-primary":
                           isActive,
                       },
-                    )}>
+                    )}
+                  >
                     <span className="hidden sm:block text-md">
                       {navItem.name}
                     </span>
@@ -125,10 +124,7 @@ export default function Navbar() {
               })}
             </div>
             <div className="flex gap-0">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => toggleTheme()}>
+              <Button variant="ghost" size="icon" onClick={() => toggleTheme()}>
                 {themeToggleIcon}
               </Button>
             </div>
@@ -137,31 +133,26 @@ export default function Navbar() {
         {!isMobile && (
           <Sheet>
             <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                className="size-12 [&_svg]:size-6">
+              <Button variant="ghost" className="size-12 [&_svg]:size-6">
                 <MenuIcon />
               </Button>
             </SheetTrigger>
             <SheetContent
               side="top"
-              className="w-screen h-screen flex flex-col items-center justify-center">
-              <SheetTitle className="hidden">
-                Website Navigation
-              </SheetTitle>
+              className="w-screen h-screen flex flex-col items-center justify-center"
+            >
+              <SheetTitle className="hidden">Website Navigation</SheetTitle>
               <div className="flex gap-4 items-center justify-center flex-col">
                 {navItems.map((navItem, idx) => {
-                  const isActive = isNavItemActive(
-                    navItem.link,
-                    pathname,
-                  );
+                  const isActive = isNavItemActive(navItem.link, pathname);
                   return (
                     <SheetClose asChild key={`navlink-${idx}`}>
                       <Link
                         href={navItem.link}
                         className={cn("text-4xl font-bold pb-2", {
                           "border-b border-primary": isActive,
-                        })}>
+                        })}
+                      >
                         {navItem.name}
                       </Link>
                     </SheetClose>

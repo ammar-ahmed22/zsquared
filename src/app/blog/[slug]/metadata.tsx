@@ -18,17 +18,14 @@ export default function Metadata({ metadata }: MetadataProps) {
         className={buttonVariants({
           variant: "ghost",
           className: "w-fit",
-        })}>
+        })}
+      >
         <ArrowLeftIcon className="size-4" />
         Back
       </Link>
       <div>
-        <p className="font-bold uppercase">
-          {metadata.categories.join(" • ")}
-        </p>
-        <h1 className="text-4xl font-display font-bold">
-          {metadata.name}
-        </h1>
+        <p className="font-bold uppercase">{metadata.categories.join(" • ")}</p>
+        <h1 className="text-4xl font-display font-bold">{metadata.name}</h1>
       </div>
       {metadata.image && (
         <Image
@@ -41,9 +38,7 @@ export default function Metadata({ metadata }: MetadataProps) {
       )}
       <div className="text-lg text-neutral">
         <p>{metadata.authors.join(", ")}</p>
-        {metadata.date && (
-          <p>{format(metadata.date, "MMM dd, yyyy")}</p>
-        )}
+        {metadata.date && <p>{format(metadata.date, "MMM dd, yyyy")}</p>}
       </div>
     </div>
   );

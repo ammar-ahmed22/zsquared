@@ -47,9 +47,7 @@ export type PostContentResponse = {
 };
 
 class Posts {
-  private async parseMetadata(
-    page: PageObjectResponse,
-  ): Promise<PostMetadata> {
+  private async parseMetadata(page: PageObjectResponse): Promise<PostMetadata> {
     const properties = new Properties(page.properties);
 
     const dbSlug = toPlainText(properties.get("Slug").asRichText());
@@ -159,14 +157,12 @@ class Posts {
       if (isFullBlock(block)) {
         if (block.type === "bulleted_list_item") {
           result.push({
-            content:
-              block.bulleted_list_item.rich_text.map(mapRichText),
+            content: block.bulleted_list_item.rich_text.map(mapRichText),
             children: await this.getAllListChildren(block.id, block),
           });
         } else if (block.type === "numbered_list_item") {
           result.push({
-            content:
-              block.numbered_list_item.rich_text.map(mapRichText),
+            content: block.numbered_list_item.rich_text.map(mapRichText),
             children: await this.getAllListChildren(block.id, block),
           });
         }
@@ -175,9 +171,7 @@ class Posts {
     return result;
   }
 
-  async content(
-    opts: PostContentOptions,
-  ): Promise<PostContentResponse> {
+  async content(opts: PostContentOptions): Promise<PostContentResponse> {
     const resp = await databases.blog.query({
       filter: {
         and: [
@@ -247,25 +241,21 @@ class Posts {
             id: block.id,
             type: "code",
             language: block.code.language,
-            content: block.code.rich_text
-              .map((r) => r.plain_text)
-              .join(""),
+            content: block.code.rich_text.map((r) => r.plain_text).join(""),
             caption: block.code.caption.map(mapRichText),
           } as CodeBlock);
           break;
         case "bulleted_list_item":
           listType = "unorderedList";
           listStack.push({
-            content:
-              block.bulleted_list_item.rich_text.map(mapRichText),
+            content: block.bulleted_list_item.rich_text.map(mapRichText),
             children: await this.getAllListChildren(block.id, block),
           });
           break;
         case "numbered_list_item":
           listType = "orderedList";
           listStack.push({
-            content:
-              block.numbered_list_item.rich_text.map(mapRichText),
+            content: block.numbered_list_item.rich_text.map(mapRichText),
             children: await this.getAllListChildren(block.id, block),
           });
           break;
@@ -308,9 +298,7 @@ class Posts {
         case "file":
           break;
         default:
-          console.warn(
-            "Encountered unknown block type: " + block.type,
-          );
+          console.warn("Encountered unknown block type: " + block.type);
           break;
       }
       if (

@@ -29,8 +29,7 @@ export default function AppleCarousel({
 
   const checkScrollability = () => {
     if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } =
-        carouselRef.current;
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
       setCanScrollLeft(scrollLeft > 0);
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
     }
@@ -59,16 +58,14 @@ export default function AppleCarousel({
       <div
         className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
         ref={carouselRef}
-        onScroll={checkScrollability}>
+        onScroll={checkScrollability}
+      >
         <div
           className={cn(
             "absolute right-0  z-[1000] h-auto  w-[5%] overflow-hidden bg-gradient-to-l",
           )}
         />
-        <div
-          className={cn(
-            "flex flex-row justify-start gap-4 sm:pl-4 pl-0",
-          )}>
+        <div className={cn("flex flex-row justify-start gap-4 sm:pl-4 pl-0")}>
           {items.map((item, index) => (
             <motion.div
               initial={{
@@ -86,7 +83,8 @@ export default function AppleCarousel({
                 },
               }}
               key={"card" + index}
-              className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl">
+              className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
+            >
               <CarouselCard {...item} />
             </motion.div>
           ))}
@@ -96,13 +94,15 @@ export default function AppleCarousel({
         <button
           className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
           onClick={scrollLeft}
-          disabled={!canScrollLeft}>
+          disabled={!canScrollLeft}
+        >
           <ArrowLeftIcon className="size-5 text-gray-500" />
         </button>
         <button
           className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
           onClick={scrollRight}
-          disabled={!canScrollRight}>
+          disabled={!canScrollRight}
+        >
           <ArrowRightIcon className="size-5 text-gray-500" />
         </button>
       </div>
@@ -115,11 +115,7 @@ export type CarouselCardProps = {
   category: string;
   title: string;
 };
-export const CarouselCard = ({
-  image,
-  category,
-  title,
-}: CarouselCardProps) => {
+export const CarouselCard = ({ image, category, title }: CarouselCardProps) => {
   return (
     <>
       <motion.div className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-[30vw] overflow-hidden flex flex-col items-start justify-start relative z-10">

@@ -64,7 +64,8 @@ export default function RootLayout({
     <ThemeProvider defaultTheme="light" rootSelector=":root">
       <html
         lang="en"
-        className={`${dmSerifDisplay.variable} ${dmSerifText.variable} ${dmSans.variable} ${dmMono.variable}`}>
+        className={`${dmSerifDisplay.variable} ${dmSerifText.variable} ${dmSans.variable} ${dmMono.variable}`}
+      >
         <body className="antialiased">
           <NextTopLoader color="var(--primary)" />
           <Navbar />

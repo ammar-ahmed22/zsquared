@@ -13,7 +13,8 @@ export default function Footer() {
           rel="noopener noreferrer"
           className={buttonVariants({
             variant: "ghost",
-          })}>
+          })}
+        >
           Zaryab <SiLinkedin className="size-4 text-primary" />
         </a>
         <a
@@ -22,7 +23,8 @@ export default function Footer() {
           rel="noopener noreferrer"
           className={buttonVariants({
             variant: "ghost",
-          })}>
+          })}
+        >
           Zaid <SiLinkedin className="size-4 text-primary" />
         </a>
       </div>
@@ -30,7 +32,8 @@ export default function Footer() {
         Built and Designed by{" "}
         <a
           href="https://ammarahmed.ca"
-          className="text-primary hover:underline">
+          className="text-primary hover:underline"
+        >
           Ammar Ahmed
         </a>
       </span>
